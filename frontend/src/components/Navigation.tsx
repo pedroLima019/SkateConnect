@@ -10,7 +10,7 @@ import { MenuIcon, Settings } from "lucide-react";
 
 const Navigation = () => {
   return (
-    <nav className="flex justify-between items-center p-2.5 bg-black border-b border-white  ">
+    <nav className="flex justify-between items-center p-2.5 bg-black border-b border-white mb-2.5  ">
       <div className="flex items-center">
         <img src="/Logo.png" alt="Logo skate connect" />
       </div>
