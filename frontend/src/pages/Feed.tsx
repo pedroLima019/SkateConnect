@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
+import NavSidebar from "@/components/NavSidebar";
 import Post from "@/components/Post";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const postsData = [
   {
@@ -30,19 +32,28 @@ const postsData = [
 
 const Feed = () => {
   return (
-    <main className="bg-black h-full w-full flex flex-col gap-0">
-      <Navigation />
-      {postsData.map((post) => (
-        <Post
-          key={post.id}
-          name={post.name}
-          minutesPost={post.minutesPost}
-          likes={post.likes}
-          coments={post.coments}
-          subtitle={post.subtitle}
-        />
-      ))}
-    </main>
+    <SidebarProvider>
+      <div className="min-h-screen w-screen grid grid-cols-1 lg:grid-cols-[260px_1fr] bg-black text-white overflow-hidden">
+        <NavSidebar />
+
+        <div className="flex flex-col h-full overflow-hidden">
+          <Navigation />
+
+          <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4">
+            {postsData.map((post) => (
+              <Post
+                key={post.id}
+                name={post.name}
+                minutesPost={post.minutesPost}
+                likes={post.likes}
+                coments={post.coments}
+                subtitle={post.subtitle}
+              />
+            ))}
+          </main>
+        </div>
+      </div>
+    </SidebarProvider>
   );
 };
 

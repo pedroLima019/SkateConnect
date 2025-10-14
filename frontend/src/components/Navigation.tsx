@@ -10,28 +10,26 @@ import { MenuIcon, Settings } from "lucide-react";
 
 const Navigation = () => {
   return (
-    <nav className="flex justify-between items-center p-2.5 bg-black border-b border-white mb-2.5  ">
-      <div className="flex items-center">
-        <img src="/Logo.png" alt="Logo skate connect" />
-      </div>
+    <nav className="flex  lg:hidden justify-between items-center px-4 py-3 bg-black border-b border-neutral-800">
+      <img src="/Logo.png" alt="Logo skate connect" className="h-8" />
+
       <Sheet>
-        <SheetTrigger className=" border-0 p-2.5">
-          <MenuIcon className="text-white " />
+        <SheetTrigger className="border-0 p-2">
+          <MenuIcon className="text-white w-6 h-6" />
         </SheetTrigger>
+
         <SheetContent
-          className="flex justify-center bg-black text-white border-0 w-full p-2.5 [&>button:first-of-type]:focus:outline-none
-    [&>button:first-of-type]:focus:ring-0
-    [&>button:first-of-type]:focus:ring-offset-0
-    "
+          side="left"
+          className="bg-black text-white border-0 p-4 w-3/4 sm:w-1/2 max-w-xs"
         >
-          <SheetHeader className="w-full ">
-            <SheetTitle className="flex ">
-              <img src="/Logo.png" alt="Logo skate connect" />
+          <SheetHeader>
+            <SheetTitle>
+              <img src="/Logo.png" alt="Logo skate connect" className="h-8" />
             </SheetTitle>
-            <SheetDescription className="flex p-2 ">
-              <a className="flex text-start items-center">
-                <Settings className="mr-2 font-semibold  w-[20px]" />
-                Settings
+            <SheetDescription className="mt-4 space-y-3">
+              <a className="flex items-center text-sm font-medium" href="#">
+                <Settings className="mr-2 w-5 h-5" />
+                Configurações
               </a>
             </SheetDescription>
           </SheetHeader>
