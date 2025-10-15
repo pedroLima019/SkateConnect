@@ -1,3 +1,4 @@
+import MobileBottomNav from "@/components/MobileBottomNav";
 import Navigation from "@/components/Navigation";
 import NavSidebar from "@/components/NavSidebar";
 import Post from "@/components/Post";
@@ -54,6 +55,7 @@ const Feed = () => {
             </div>
           </main>
         </div>
+        <MobileBottomNav />
       </div>
     </SidebarProvider>
   );
