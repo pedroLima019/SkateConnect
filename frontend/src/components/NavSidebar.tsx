@@ -11,12 +11,22 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-import { Home, Compass, User, Settings, LogOut } from "lucide-react";
+import {
+  Home,
+  User,
+  Settings,
+  LogOut,
+  PlusCircle,
+  Search,
+  Heart,
+} from "lucide-react";
 
 const menuItems = [
   { title: "Home", url: "/home", icon: Home },
-  { title: "Explorar", url: "/explore", icon: Compass },
+  { title: "Explorar", url: "/explore", icon: Search },
   { title: "Perfil", url: "/profile", icon: User },
+  { title: "Criar", url: "/create", icon: PlusCircle },
+  { title: "Notificação", url: "/notification", icon: Heart },
   { title: "Configurações", url: "/settings", icon: Settings },
 ];
 
@@ -40,8 +50,8 @@ export default function NavSidebar() {
                         href={item.url}
                         className="flex items-center px-5 rounded-xl hover:bg-neutral-900 transition"
                       >
-                        <item.icon className="w-6 h-6" />
-                        <span className="text-sm font-medium">
+                        <item.icon />
+                        <span className="text-sm font-medium ">
                           {item.title}
                         </span>
                       </a>
@@ -53,7 +63,7 @@ export default function NavSidebar() {
           </SidebarGroup>
         </SidebarContent>
 
-        <SidebarFooter className="px-4 py-4 border-t border-neutral-800">
+        <SidebarFooter className="p-4 border-t border-neutral-800">
           <button className="flex items-center gap-3 w-full text-left text-sm hover:text-red-500 transition">
             <LogOut className="w-5 h-5" />
             <span>Sair</span>
