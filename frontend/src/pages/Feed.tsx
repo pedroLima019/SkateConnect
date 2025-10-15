@@ -33,23 +33,25 @@ const postsData = [
 const Feed = () => {
   return (
     <SidebarProvider>
-      <div className="min-h-screen w-screen grid grid-cols-1 lg:grid-cols-[260px_1fr] bg-black text-white overflow-hidden">
+      <div className="flex bg-black text-white min-h-screen w-full overflow-hidden">
         <NavSidebar />
 
-        <div className="flex flex-col h-full overflow-hidden">
+        <div className="flex-1 flex flex-col lg:ml-[260px]">
           <Navigation />
 
-          <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4">
-            {postsData.map((post) => (
-              <Post
-                key={post.id}
-                name={post.name}
-                minutesPost={post.minutesPost}
-                likes={post.likes}
-                coments={post.coments}
-                subtitle={post.subtitle}
-              />
-            ))}
+          <main className="flex-1 overflow-y-auto p-4 flex flex-col items-center">
+            <div className="w-full  space-y-1">
+              {postsData.map((post) => (
+                <Post
+                  key={post.id}
+                  name={post.name}
+                  minutesPost={post.minutesPost}
+                  likes={post.likes}
+                  coments={post.coments}
+                  subtitle={post.subtitle}
+                />
+              ))}
+            </div>
           </main>
         </div>
       </div>

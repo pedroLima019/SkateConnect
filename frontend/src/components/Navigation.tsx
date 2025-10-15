@@ -3,15 +3,21 @@ import {
   SheetContent,
   SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MenuIcon, Settings } from "lucide-react";
+import { MenuIcon, Home, Compass, User, Settings, LogOut } from "lucide-react";
+
+const menuItems = [
+  { title: "Home", icon: Home, url: "#" },
+  { title: "Explorar", icon: Compass, url: "#" },
+  { title: "Perfil", icon: User, url: "#" },
+  { title: "Configurações", icon: Settings, url: "#" },
+];
 
 const Navigation = () => {
   return (
-    <nav className="flex  lg:hidden justify-between items-center px-4 py-3 bg-black border-b border-neutral-800">
-      <img src="/Logo.png" alt="Logo skate connect" className="h-8" />
+    <nav className="flex lg:hidden justify-between items-center px-4 py-3 bg-black border-b border-neutral-800 text-white">
+      <h1 className="font-bold text-base">SkateConnect</h1>
 
       <Sheet>
         <SheetTrigger className="border-0 p-2">
@@ -20,17 +26,32 @@ const Navigation = () => {
 
         <SheetContent
           side="left"
-          className="bg-black text-white border-0 p-4 w-3/4 sm:w-1/2 max-w-xs"
+          className="bg-black text-white border-0 w-3/4 sm:w-full  p-5"
         >
           <SheetHeader>
-            <SheetTitle>
-              <img src="/Logo.png" alt="Logo skate connect" className="h-8" />
-            </SheetTitle>
-            <SheetDescription className="mt-4 space-y-3">
-              <a className="flex items-center text-sm font-medium" href="#">
-                <Settings className="mr-2 w-5 h-5" />
-                Configurações
-              </a>
+            <h2 className="font-bold text-lg mb-6">SkateConnect</h2>
+
+            <SheetDescription asChild>
+              <div className="flex flex-col gap-10">
+                {menuItems.map((item) => (
+                  <a
+                    key={item.title}
+                    href={item.url}
+                    className="flex items-center gap-3 text-sm font-medium hover:text-gray-300 transition-colors"
+                  >
+                    <item.icon className="w-5 h-5" />
+                    {item.title}
+                  </a>
+                ))}
+
+                <a
+                  href="#"
+                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  <LogOut className="w-5 h-5" />
+                  Sair
+                </a>
+              </div>
             </SheetDescription>
           </SheetHeader>
         </SheetContent>

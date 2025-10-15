@@ -1,31 +1,65 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarHeader,
+  SidebarFooter,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-const NavSidebar = () => {
+import { Home, Compass, User, Settings, LogOut } from "lucide-react";
+
+const menuItems = [
+  { title: "Home", url: "/home", icon: Home },
+  { title: "Explorar", url: "/explore", icon: Compass },
+  { title: "Perfil", url: "/profile", icon: User },
+  { title: "Configurações", url: "/settings", icon: Settings },
+];
+
+export default function NavSidebar() {
   return (
-    <nav className="hidden lg:flex  h-full  text-white">
+    <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-[260px]   ">
       <Sidebar>
-        <SidebarHeader className="p-4 border-b border-neutral-800 flex items-start  ">
-          <img src="Logo.png" alt="logo skate connect" />
+        <SidebarHeader className="p-4 border-b border-neutral-800">
+          <h1 className="font-bold">SkateConnect</h1>
         </SidebarHeader>
 
-        <SidebarContent className="flex-1 p-4 space-y-2">
-          <SidebarGroup>Home</SidebarGroup>
-          <SidebarGroup>Explorar</SidebarGroup>
-          <SidebarGroup>Perfil</SidebarGroup>
+        <SidebarContent className="flex-1 overflow-y-auto p-5 ">
+          <SidebarGroup>
+            <SidebarGroupLabel className="sr-only">Navegação</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu className="gap-5">
+                {menuItems.map((item) => (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <a
+                        href={item.url}
+                        className="flex items-center px-5 rounded-xl hover:bg-neutral-900 transition"
+                      >
+                        <item.icon className="w-6 h-6" />
+                        <span className="text-sm font-medium">
+                          {item.title}
+                        </span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
         </SidebarContent>
 
-        <SidebarFooter className="p-4 border-t border-neutral-800 text-sm">
-          © 2025 SkateConnect
+        <SidebarFooter className="px-4 py-4 border-t border-neutral-800">
+          <button className="flex items-center gap-3 w-full text-left text-sm hover:text-red-500 transition">
+            <LogOut className="w-5 h-5" />
+            <span>Sair</span>
+          </button>
         </SidebarFooter>
       </Sidebar>
-    </nav>
+    </aside>
   );
-};
-
-export default NavSidebar;
+}

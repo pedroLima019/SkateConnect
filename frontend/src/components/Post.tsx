@@ -11,7 +11,7 @@ interface PostProps {
 const Post = ({ name, minutesPost, likes, coments, subtitle }: PostProps) => {
   return (
     <div className="flex flex-col items-center w-full p-2 md:p-3 ">
-      <article className="border border-white text-white rounded-md p-2.5 bg-zinc-900 md:p-5 ">
+      <article className="border border-zinc-600 text-white rounded-md p-2.5 bg-zinc-950 md:p-5 ">
         <header className="flex w-full items-center mb-2 md:mb-5">
           <div className="flex items-center flex-1">
             <User className="bg-white text-black rounded-full md:w-[35px] md:h-[35px]" />
@@ -26,7 +26,7 @@ const Post = ({ name, minutesPost, likes, coments, subtitle }: PostProps) => {
             className="text-white text-[12px] font-semibold 
            bg-zinc-700 p-1.5 rounded-lg hover:bg-white transition-all duration-300 hover:text-black md:w-[80px]"
           >
-            Follow
+            Seguir
           </button>
         </header>
 
