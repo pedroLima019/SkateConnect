@@ -5,11 +5,11 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MenuIcon, Home, Compass, User, Settings, LogOut } from "lucide-react";
+import { MenuIcon, Home, User, Settings, LogOut, Search } from "lucide-react";
 
 const menuItems = [
   { title: "Home", icon: Home, url: "#" },
-  { title: "Explorar", icon: Compass, url: "#" },
+  { title: "Explorar", icon: Search, url: "#" },
   { title: "Perfil", icon: User, url: "#" },
   { title: "Configurações", icon: Settings, url: "#" },
 ];
