@@ -20,11 +20,12 @@ import {
   Search,
   Heart,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const menuItems = [
-  { title: "Home", url: "/home", icon: Home },
+  { title: "Home", url: "/feed", icon: Home },
   { title: "Explorar", url: "/explore", icon: Search },
-  { title: "Perfil", url: "/profile", icon: User },
+  { title: "Perfil", url: "/perfil", icon: User },
   { title: "Criar", url: "/create", icon: PlusCircle },
   { title: "Notificação", url: "/notification", icon: Heart },
   { title: "Configurações", url: "/settings", icon: Settings },
@@ -46,15 +47,15 @@ export default function NavSidebar() {
                 {menuItems.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <a
-                        href={item.url}
+                      <Link
+                        to={item.url}
                         className="flex items-center px-5 rounded-xl hover:bg-neutral-900 transition"
                       >
                         <item.icon />
                         <span className="text-sm font-medium ">
                           {item.title}
                         </span>
-                      </a>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
