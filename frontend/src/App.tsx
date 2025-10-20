@@ -3,10 +3,12 @@ import {
   Routes,
   Route,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Feed from "@/pages/Feed";
-import Perfil from "@/pages/Perfil";
+import Profile from "@/pages/Profile";
+import CreatePost from "./pages/CreatePost";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -14,6 +16,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="popLayout">
       <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Navigate to="/feed" replace />} />
         <Route
           path="/feed"
           element={
@@ -22,28 +25,42 @@ function AnimatedRoutes() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
             >
               <Feed />
             </motion.div>
           }
         />
         <Route
-          path="/perfil"
+          path="/profile"
           element={
             <motion.div
               className="bg-black text-white min-h-screen"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
             >
-              <Perfil
+              <Profile
                 name="Pedro Lima"
                 post={80}
                 followers={200}
                 follows={300}
               />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/createPost"
+          element={
+            <motion.div
+              className="bg-black min-h-screen"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <CreatePost />
             </motion.div>
           }
         />

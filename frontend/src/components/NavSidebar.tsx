@@ -24,11 +24,11 @@ import { Link } from "react-router-dom";
 
 const menuItems = [
   { title: "Home", url: "/feed", icon: Home },
-  { title: "Explorar", url: "/explore", icon: Search },
-  { title: "Perfil", url: "/perfil", icon: User },
-  { title: "Criar", url: "/create", icon: PlusCircle },
-  { title: "Notificação", url: "/notification", icon: Heart },
-  { title: "Configurações", url: "/settings", icon: Settings },
+  { title: "Explorar", url: "/", icon: Search },
+  { title: "Perfil", url: "/profile", icon: User },
+  { title: "Criar", url: "/createPost", icon: PlusCircle },
+  { title: "Notificação", url: "/", icon: Heart },
+  { title: "Configurações", url: "/", icon: Settings },
 ];
 
 export default function NavSidebar() {

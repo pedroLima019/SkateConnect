@@ -10,13 +10,16 @@ const MobileBottomNav = () => {
       <Link to="" className="flex flex-col items-center justify-center">
         <Search className="w-5" />
       </Link>
-      <Link to="">
+      <Link to="/createPost">
         <PlusCircle className="w-5" />
       </Link>
       <Link to="" className="flex flex-col items-center justify-center">
         <Heart className="w-5" />
       </Link>
-      <Link to="/perfil" className="flex flex-col items-center justify-center ">
+      <Link
+        to="/profile"
+        className="flex flex-col items-center justify-center "
+      >
         <User className="w-5" />
       </Link>
     </nav>

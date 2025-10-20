@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const menuItems = [
   { title: "Home", icon: Home, url: "/feed" },
   { title: "Explorar", icon: Search, url: "#" },
-  { title: "Perfil", icon: User, url: "/perfil" },
+  { title: "Perfil", icon: User, url: "/profile" },
   { title: "Configurações", icon: Settings, url: "#" },
 ];
 
