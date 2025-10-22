@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Feed from "@/pages/Feed";
 import Profile from "@/pages/Profile";
 import CreatePost from "./pages/CreatePost";
+import Login from "./components/Login";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -64,6 +65,7 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </AnimatePresence>
   );

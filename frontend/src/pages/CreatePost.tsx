@@ -37,6 +37,7 @@ const CreatePost = () => {
               accept="image/*"
               multiple
               className="hidden"
+              capture="environment"
               onChange={handleSelecionarImagens}
             />
           </label>
